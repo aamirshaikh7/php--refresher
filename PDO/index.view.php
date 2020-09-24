@@ -14,14 +14,12 @@
 <body>
     <header>
         <ul>
-            <?php foreach($tasks as $task) : ?>
+            <?php foreach($results as $result) : ?>
                 <li>
-                    <?php if($task->is_complete()) : ?>
-                        <strike><?= $task->title() ?></strike>
-
+                    <?php if($result->is_completed) : ?>
+                        <strike><?= $result->title ?></strike>
                     <?php else : ?>
-
-                        <?= $task->title() ?>
+                        <?= $result->title ?>
                     <?php endif; ?>
                 </li>
             <?php endforeach; ?>
