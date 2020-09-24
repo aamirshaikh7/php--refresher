@@ -1,19 +1,9 @@
 <?php
 
-try {
-    $pdo = new PDO('mysql:host=127.0.0.1;dbname=task-manager', 'root', '');
-} catch (PDOException $e) {
-    die($e->getMessage());
-}
+require 'Task.php';
 
-// prepare query (statement)
+require 'connection.php';
 
-$statement = $pdo->prepare('SELECT * FROM tasks');
-
-$statement->execute();
-
-$results = $statement->fetchAll(PDO::FETCH_OBJ);
-
-// var_dump($results[0]->title);
+require 'fetch.php';
 
 require 'index.view.php';
