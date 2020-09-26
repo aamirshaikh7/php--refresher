@@ -1,11 +1,9 @@
 <?php
 
-require 'functions.php';
+$builder = require 'bootstrap.php';
 
 require 'Task.php';
 
-$pdo = connection();
+$results = $builder->fetch('tasks', 'Task');
 
-$results = fetch($pdo);
-
-require 'index.view.php';
+require 'index.view.php'; 
