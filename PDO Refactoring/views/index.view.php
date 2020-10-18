@@ -12,6 +12,12 @@
     </style>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="about.php">About us</a></li>
+            <li><a href="contact.php">Contact us</a></li>
+        </ul>
+    </nav>
     <header>
         <ul>
             <?php foreach($results as $result) : ?>

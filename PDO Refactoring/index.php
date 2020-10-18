@@ -1,9 +1,11 @@
 <?php
 
-$builder = require 'bootstrap.php';
+$builder = require 'main/bootstrap.php';
 
-require 'Task.php';
+$router = new Router();
 
-$results = $builder->fetch('tasks', 'Task');
+require 'routes.php';
 
-require 'index.view.php'; 
+var_dump($_SERVER['REQUEST_URI']);
+
+require $router->call('contact');

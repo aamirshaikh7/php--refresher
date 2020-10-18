@@ -2,9 +2,11 @@
 
 $config = require 'config.php';
 
-require 'database/Connection.php';
+require 'main/Router.php';
 
-require 'database/QueryBuilder.php';
+require 'main/database/Connection.php';
+
+require 'main/database/QueryBuilder.php';
 
 // initialize MySQL connection and pass the results to QueryBuilder
 
