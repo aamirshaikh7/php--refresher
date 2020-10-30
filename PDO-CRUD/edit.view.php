@@ -1,4 +1,4 @@
-<?php include('includes/header.php'); ?>
+<?php include 'includes/header.php'; ?>
 
     <div class="container" id="get-started">
         <div class="section">
@@ -12,4 +12,4 @@
     <br><br>
     </div>
 
-<?php include('includes/footer.php'); ?>
+<?php include 'includes/footer.php'; ?>

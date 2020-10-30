@@ -1,5 +1,17 @@
-<?php include('includes/header.php'); ?>
+<?php include 'includes/header.php'; ?>
 
+<?php
+    $alert = '';
+    
+    require 'database/Connection.php';
+
+    require 'database/QueryBuilder.php';
+    
+    $builder = new QueryBuilder(Connection::make());
+    
+    $builder->post('users'); 
+
+?>
     <div class="container" id="get-started">
         <div class="section">
 
@@ -22,7 +34,7 @@
                         <label for="mail">E-mail</label>
                     </div>
                     <div class="col s12">
-                    <a type="submit" class="btn-large center waves-effect waves-light blue">Submit</a>
+                        <button type="submit" class="btn-large center waves-effect waves-light blue">Add User</button>
                     </div>
                 </div>
             </form>
@@ -33,4 +45,4 @@
     <br><br>
     </div>
 
-<?php include('includes/footer.php'); ?>
+<?php include 'includes/footer.php'; ?>

@@ -1,4 +1,4 @@
-<?php include('includes/header.php'); ?>
+<?php include 'includes/header.php'; ?>
 
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
@@ -47,39 +47,25 @@
     <div class="section">
 
       <ul class="collection">
+
         <?php foreach($users as $user) : ?>
           <div class="collection-item avatar">
             <i class="material-icons circle">person</i>
-            <span class="name"><?= $user->name ?></span>
+            <span class="name">
+              <?= $user->name ?>
+            </span>
             <p><?= $user->designation ?></p>
             <p><?= $user->email ?></p>
             <li><a href="#" class=""><i class="red-text material-icons">delete</i></a></li>
             <li><a href="./edit.view.php" class=""><i class="material-icons">edit</i></a></li>
           </div>
         <?php endforeach; ?>
-        <!-- <div class="collection-item avatar">
-          <i class="material-icons circle">person</i>
-          <span class="name">Dummy</span>
-          <li><a href="#" class="right"><i class="red-text material-icons">delete</i></a></li>
-          <li><a href="./edit.view.php" class="right"><i class="material-icons">edit</i></a></li>
-        </div>
-        <div class="collection-item avatar">
-          <span class="name">Dummy</span>
-          <i class="material-icons circle">person</i>
-          <li><a href="#" class="right"><i class="red-text material-icons">delete</i></a></li>
-          <li><a href="./edit.view.php" class="right"><i class="material-icons">edit</i></a></li>
-        </div>
-        <div class="collection-item avatar">
-          <span class="name">Dummy</span>
-          <i class="material-icons circle">person</i>
-          <li><a href="#" class="right"><i class="red-text material-icons">delete</i></a></li>
-          <li><a href="./edit.view.php" class="right"><i class="material-icons">edit</i></a></li> -->
-        </div>
+        
       </ul>
-            
-    </div>
+    </div>    
+  </div>
     
     <br><br>
   </div>
 
-<?php include('includes/footer.php'); ?>
+<?php include 'includes/footer.php'; ?>
