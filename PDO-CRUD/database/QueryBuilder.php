@@ -66,4 +66,16 @@ class QueryBuilder {
 
         return $user;
     }
+
+    public function delete($id, $table) {
+        $sql = "DELETE FROM ${table} WHERE id=:id";
+
+        $statement = $this->pdo->prepare($sql);
+
+        $isDeleted = $statement->execute([':id' => $id]);
+
+        if($isDeleted) {
+            header('Location: index.php#get-started');
+        }
+    }
 }
