@@ -1,8 +1,6 @@
 <?php include 'includes/header.php'; ?>
 
 <?php
-    $alert = '';
-    
     require 'database/Connection.php';
 
     require 'database/QueryBuilder.php';

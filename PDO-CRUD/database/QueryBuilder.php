@@ -8,7 +8,9 @@ class QueryBuilder {
     }
 
     public function fetch($table) {
-        $statement = $this->pdo->prepare("SELECT * FROM ${table}");
+        $sql = "SELECT * FROM ${table}";
+        
+        $statement = $this->pdo->prepare($sql);
 
         $statement->execute();
 
@@ -29,9 +31,39 @@ class QueryBuilder {
                 $isInserted = $statement->execute([':name' => $name, ':designation' => $designation, ':email' => $email]);
     
                 if($isInserted) {
-                    // header('Location: /');
+                    header('Location: index.php#get-started');
                 }
             }
         }  
+    }
+
+    public function put($id, $table) {
+        $sql = "SELECT * FROM ${table} WHERE id=:id";
+        
+        $statement = $this->pdo->prepare($sql);
+
+        $statement->execute([':id' => $id]);
+
+        $user = $statement->fetch(PDO::FETCH_OBJ);
+        
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if(isset($_POST['name']) && isset($_POST['designation']) && isset($_POST['email'])) {
+                $name = $_POST['name'];
+                $designation = $_POST['designation'];
+                $email = $_POST['email'];
+    
+                $sql = "UPDATE ${table} SET name=:name, designation=:designation, email=:email WHERE id=:id";
+    
+                $statement = $this->pdo->prepare($sql);
+    
+                $isInserted = $statement->execute([':name' => $name, ':designation' => $designation, ':email' => $email, ':id' => $id]);
+    
+                if($isInserted) {
+                    header('Location: index.php#get-started');
+                }
+            }
+        }  
+
+        return $user;
     }
 }
