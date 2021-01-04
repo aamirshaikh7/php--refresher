@@ -1,8 +1,6 @@
 <?php
 
-require 'database/Connection.php';
-
-require 'database/QueryBuilder.php';
+require 'db_require.php';
 
 $builder = new QueryBuilder(Connection::make());
 

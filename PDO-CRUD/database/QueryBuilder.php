@@ -31,7 +31,7 @@ class QueryBuilder {
                 $isInserted = $statement->execute([':name' => $name, ':designation' => $designation, ':email' => $email]);
     
                 if($isInserted) {
-                    header('Location: index.php#get-started');
+                    header('Location: index.php');
                 }
             }
         }  
@@ -59,7 +59,7 @@ class QueryBuilder {
                 $isInserted = $statement->execute([':name' => $name, ':designation' => $designation, ':email' => $email, ':id' => $id]);
     
                 if($isInserted) {
-                    header('Location: index.php#get-started');
+                    header('Location: index.php');
                 }
             }
         }  

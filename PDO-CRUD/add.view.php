@@ -1,9 +1,11 @@
 <?php include 'includes/header.php'; ?>
 
 <?php
-    require 'database/Connection.php';
-
-    require 'database/QueryBuilder.php';
+    // if(user!loggedin) then
+    // header("Location: login.view.php");
+    // else
+    
+    require 'db_require.php';
     
     $builder = new QueryBuilder(Connection::make());
     
